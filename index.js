@@ -13,10 +13,10 @@ module.exports = async function renderReport({template, data, helpers, savePath}
         template: {
                 content: template,
                 engine: 'handlebars',
-                recipe: 'html-to-xlsx'
+                recipe: 'html-to-xlsx',
+                helpers
             },
             data,
-            helpers
     });
     fs.writeFileSync(savePath, resp.content);
     console.log('Se genero el reporte correctamente');
